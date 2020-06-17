@@ -1,21 +1,12 @@
 .profile__button_add{
-    background-color: black;
     background-image: url(../../../../images/sum.svg);
     width: 150px;
     height: 50px;
     border: 2px solid #FFFFFF;
     border-radius: 2px;
     background-size: 15%;
-    background-repeat: no-repeat;
-    background-position: center;
-    cursor: pointer;
-    outline: none;
-    transition: linear .5s;
 }
-.profile__button_add:hover{
-    background-image: url(../../../../images/sumhover.svg);
-    border: 2px solid rgba(255, 255, 255, 0.6);
-}
+
 @media screen and (max-width: 812px){
     .profile__button_add{
         width: 282px;

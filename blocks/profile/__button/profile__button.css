@@ -1,2 +1,13 @@
 @import url(./_add/profile__button_add.css);
 @import url(./_edit/profile__button_edit.css);
+.profile__button{
+    background-color: black;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+    outline: none;
+    transition: linear .5s;
+}
+.profile__button:hover{
+    opacity: .6;
+}

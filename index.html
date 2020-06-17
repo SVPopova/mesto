@@ -18,14 +18,14 @@
             <div class="profile__text">
               <div class="profile__topline">
                 <h1 class="profile__name">Жак-Ив Кусто</h1>
-                <button class="profile__button_edit"></button>
+                <button class="profile__button profile__button_edit" type="button"></button>
               </div>
               
               <p class="profile__about">Исследователь океана</p>
             </div>
             
           </div>
-          <button class="profile__button_add"></button>
+          <button class="profile__button profile__button_add" type="button"></button>
         </section>
         <section class="elements">
           <div class="element">
@@ -74,13 +74,13 @@
         <footer class="footer">
           <p class="footer__copyright">&#169; 2020 Mesto Russia</p>
         </footer>
-        <section class="popup popup_off"> 
+        <section class="popup"> 
           <form class="popup__container" method="GET" action="#" name="profileEdit">
             <button class="popup__close"></button>
             <h2 class="popup__title">Редактировать профиль</h2>
-            <input type="text" class="popup__input popup__name" value="">
-            <input type="text" class="popup__input popup__about" value="">
-            <input type="submit" class="popup__button" value="Сохранить">
+            <input type="text" name="name" class="popup__input popup__input_name" value="">
+            <input type="text" name="about" class="popup__input popup__input_about" value="">
+            <input type="submit" name="button" class="popup__button" value="Сохранить">
           </form>
         </section>  
         <script src="./scripts/script.js"></script>

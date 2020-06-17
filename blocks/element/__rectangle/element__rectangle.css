@@ -7,5 +7,8 @@
     background-color: #FFFFFF;
     cursor: pointer;
     outline: none;
+    transition: linear .5s;
 }
-
+.element__rectangle:hover{
+    opacity: .6;
+}

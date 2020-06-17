@@ -15,5 +15,5 @@ left: 100%;
 transition: linear .5s;
 }
 .popup__close:hover{
-background-image: url(../../../images/closehover.svg);
+opacity: .6;
 }
