@@ -18,9 +18,9 @@ function closePopup() {
 
 function formSubmitHandler (evt) {
     evt.preventDefault(); 
-    closePopup()
     nameProfile.textContent = nameInput.value;
     aboutProfile.textContent = jobInput.value;
+    closePopup()
 }
 
 buttonEdit.addEventListener("click", showPopup);
