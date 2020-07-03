@@ -1,16 +1,12 @@
 .popup__container{
-    display: flex;
-    flex-direction: column;
-    background-color: white;
-    width: 430px;
-    align-items: center;
-    border-radius: 3%;
+    display: none;
     margin: auto;
-    box-sizing: border-box;
     position: relative;
+    
 }
 @media screen and (max-width: 516px){
     .popup__container{
         margin: auto 41px auto 41px;
     }  
 }
+

@@ -1,4 +1,4 @@
-.element__rectangle{
+.element__like{
     vertical-align: middle;
     width: 20.76px;
     height: 18.13px;
@@ -9,6 +9,8 @@
     outline: none;
     transition: linear .5s;
 }
-.element__rectangle:hover{
+.element__like:hover{
     opacity: .6;
 }
+
+
