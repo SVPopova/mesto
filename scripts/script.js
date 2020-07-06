@@ -1,28 +1,30 @@
 const buttonEdit = document.querySelector('.profile__button_edit');
 const buttonAdd = document.querySelector('.profile__button_add');
-let popup = document.querySelector('.popup');
+const popup = document.querySelector('.popup');
 
-let nameProfile = document.querySelector('.profile__name');
-let aboutProfile = document.querySelector('.profile__about');
-let formElement = document.querySelectorAll('.popup__container');
-let formElementEdit = popup.querySelector('.popup__container_edit');
-let formElementAdd = popup.querySelector('.popup__container_add');
-let buttonCloseEdit = formElementEdit.querySelector('.popup__close');
-let buttonCloseAdd = formElementAdd.querySelector('.popup__close');
-let nameInput = formElementEdit.querySelector('.popup__input_name');
-let jobInput = formElementEdit.querySelector('.popup__input_about');
-let titleInput = formElementAdd.querySelector('.popup__input_title');
-let linkInput = formElementAdd.querySelector('.popup__input_link');
-let popupButtonSave = popup.querySelector('.popup__button_save');
-let popupButtonAdd = popup.querySelector('.popup__button_add');
-let popupTitlePlace = popup.querySelector('.popup__title_place');
-let popupTitleProfile = popup.querySelector('.popup__title_profile');
+const nameProfile = document.querySelector('.profile__name');
+const aboutProfile = document.querySelector('.profile__about');
+const formElement = document.querySelectorAll('.popup__container');
+const formElementEdit = popup.querySelector('.popup__container_edit');
+const formElementAdd = popup.querySelector('.popup__container_add');
+const buttonCloseEdit = formElementEdit.querySelector('.popup__close');
+const buttonCloseAdd = formElementAdd.querySelector('.popup__close');
+const nameInput = formElementEdit.querySelector('.popup__input_name');
+const jobInput = formElementEdit.querySelector('.popup__input_about');
+const titleInput = formElementAdd.querySelector('.popup__input_title');
+const linkInput = formElementAdd.querySelector('.popup__input_link');
+const popupButtonSave = popup.querySelector('.popup__button_save');
+const popupButtonAdd = popup.querySelector('.popup__button_add');
+const popupTitlePlace = popup.querySelector('.popup__title_place');
+const popupTitleProfile = popup.querySelector('.popup__title_profile');
 
-let popupFigure = popup.querySelector('.popup__container_figure');
-let popupImg = popupFigure.querySelector('.popup__img');
-let popupText = popupFigure.querySelector('.popup__text');
-let buttonCloseImg = popupFigure.querySelector('.popup__close');
-let cardImg = document.querySelector('.element__image');
+const popupFigure = popup.querySelector('.popup__container_figure');
+const popupImg = popupFigure.querySelector('.popup__img');
+const popupText = popupFigure.querySelector('.popup__text');
+const buttonCloseImg = popupFigure.querySelector('.popup__close');
+const cardImg = document.querySelector('.element__image');
+
+//Не получилось вынести в отдельный файл, буду очень благодарна если скините мне ссылку на статью, в которой рассказывают как это сделать)
 const initialCards = [
     {
         name: 'Архыз',
@@ -59,8 +61,7 @@ function addCard(name, link) {
     cardsElement.querySelector('.element__image').src = link;
     cardsElement.querySelector('.element__image').alt = name;
     cardsElement.querySelector('.element__title').textContent = name;
-    
-   
+
     //слушатель кнопки удаления карточки
     cardsElement.querySelector('.element__basket').addEventListener('click', deleteCard);
 
@@ -71,12 +72,17 @@ function addCard(name, link) {
   });
     //слушатель открытия картинки
     cardsElement.querySelector('.element__image').addEventListener('click', openImg);
-    cardsContainer.append(cardsElement);
+    addToEnd(cardsContainer, cardsElement);
 }
 
 initialCards.forEach( function(elem) {
     addCard(elem.name, elem.link);
 });
+
+//место добавления
+function addToEnd(container, element){
+    container.append(element);
+}
 
 //Удаление карточки    
 function deleteCard(e) {
@@ -88,8 +94,7 @@ function deleteCard(e) {
 function showPopup(popupOn) {
     popup.classList.add('popup_on');
     popupOn.classList.add('popup__container_active');
-    nameInput.value = nameProfile.textContent;
-    jobInput.value = aboutProfile.textContent;  
+    
 }
 
 //Закрытие попапа
@@ -118,9 +123,13 @@ function openImg(evt) {
 
 
 buttonEdit.addEventListener('click', function() {
-    showPopup(formElementEdit);
+    showPopup(formElementEdit); 
+    nameInput.value = nameProfile.textContent;
+    jobInput.value = aboutProfile.textContent; 
 });
 buttonAdd.addEventListener('click', function() {
+    linkInput.value = '';
+   titleInput.value = '';
     showPopup(formElementAdd);
 });
 

@@ -1,4 +1,9 @@
 .element__image{
     width: 282px;
     height: 282px;
+    cursor: pointer;
+    transition: linear .5s
+}
+.element__image:hover{
+    opacity: .6;
 }

@@ -14,6 +14,8 @@
     padding: 0;
     margin: 0; 
     transition: linear .5s;
+    cursor: pointer;
+    z-index: 1;
 }
 .element__basket:hover{
     opacity: .6;

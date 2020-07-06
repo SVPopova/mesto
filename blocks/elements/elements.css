@@ -8,6 +8,7 @@
     align-content: center;
     grid-gap: 21px 18px;
     margin: 0 auto 66px auto;
+    grid-auto-rows: 361px;
 }
 @media screen and (max-width: 768px){
     .elements{
