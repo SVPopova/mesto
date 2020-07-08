@@ -72,7 +72,7 @@ function addCard(name, link) {
   });
     //слушатель открытия картинки
     cardsElement.querySelector('.element__image').addEventListener('click', openImg);
-    addToEnd(cardsContainer, cardsElement);
+    addToStart(cardsContainer, cardsElement);
 }
 
 initialCards.forEach( function(elem) {
@@ -80,8 +80,8 @@ initialCards.forEach( function(elem) {
 });
 
 //место добавления
-function addToEnd(container, element){
-    container.append(element);
+function addToStart(container, element){
+    container.prepend(element);
 }
 
 //Удаление карточки    
