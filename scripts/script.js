@@ -106,7 +106,6 @@ function closePopup(evt) {
         popup.classList.remove('popup_on'); 
         evt.classList.remove('popup__container_active');
     });
-    console.log(formElement);
  }
 //Закрытие попапа при клике на ФОН
 function ClosingByBackground (evt) {
@@ -131,10 +130,6 @@ function formSubmitHandler (evt) {
     closePopup(evt);
 }
 
-
-
-
-
 popup.addEventListener('click', ClosingByBackground);
 document.addEventListener('keydown', ClosingByEsc)
 
@@ -154,11 +149,15 @@ buttonClose.forEach(e=> {
 
 formElementEdit.addEventListener('submit', formSubmitHandler);
 formElementAdd.addEventListener('submit', evt =>{
-    evt.preventDefault(); 
-   const link = linkInput.value;
-   const name = titleInput.value;
-   linkInput.value = '';
-   titleInput.value = '';
-    addCard(name, link);
-    closePopup(evt);
+    if (titleInput.checkValidity() === true && linkInput.checkValidity() === true) {
+        evt.preventDefault(); 
+        const link = linkInput.value;
+        const name = titleInput.value;
+        linkInput.value = '';
+        titleInput.value = '';
+        addCard(name, link);
+        closePopup(evt);
+    }
+
+
 });

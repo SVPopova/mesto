@@ -33,7 +33,7 @@
           <p class="footer__copyright">&#169; 2020 Mesto Russia</p>
         </footer>
         <section class="popup"> 
-          <form class="popup__container popup__container_modal popup__container_edit popup__form" method="GET" action="#" name="profileEdit" novalidate>
+          <form class="popup__container popup__container_modal popup__container_edit popup__container_form" method="GET" action="#" name="profileEdit" novalidate>
             <button class="popup__close" type="button"></button>
             <h2 class="popup__title popup__title_profile">Редактировать профиль</h2>
             <input type="text" name="name" class="popup__input popup__input_name" id="name-input" value="" required minlength="2" maxlength="40">
@@ -42,7 +42,7 @@
             <span class="popup__input-error" id="about-input-error">Необходимо заполнить данное поле</span>
             <button type="submit" class="popup__button popup__button_save">Сохранить</button>
           </form>
-          <form class="popup__container popup__container_modal popup__container_add" method="GET" action="#" name="cardAdd" novalidate>
+          <form class="popup__container popup__container_modal popup__container_add popup__container_form" method="GET" action="#" name="cardAdd" novalidate>
             <button class="popup__close" type="button"></button>
             <h2 class="popup__title popup__title_place">Новое место</h2>
             <input type="text" name="title" class="popup__input popup__input_title" id="title-input" placeholder="Название" value="" required minlength="1" maxlength="30">
