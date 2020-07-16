@@ -32,8 +32,8 @@
         <footer class="footer">
           <p class="footer__copyright">&#169; 2020 Mesto Russia</p>
         </footer>
-        <section class="popup"> 
-          <form class="popup__container popup__container_modal popup__container_edit popup__container_form" method="GET" action="#" name="profileEdit" novalidate>
+        <section class="popup popup_type_profile"> 
+          <form class="popup__container popup__container_form" method="GET" action="#" name="profileEdit" novalidate>
             <button class="popup__close" type="button"></button>
             <h2 class="popup__title popup__title_profile">Редактировать профиль</h2>
             <input type="text" name="name" class="popup__input popup__input_name" id="name-input" value="" required minlength="2" maxlength="40">
@@ -42,7 +42,9 @@
             <span class="popup__input-error" id="about-input-error">Необходимо заполнить данное поле</span>
             <button type="submit" class="popup__button popup__button_save">Сохранить</button>
           </form>
-          <form class="popup__container popup__container_modal popup__container_add popup__container_form" method="GET" action="#" name="cardAdd" novalidate>
+        </section>  
+        <section class="popup popup_type_place"> 
+          <form class="popup__container popup__container_form" method="GET" action="#" name="cardAdd" novalidate>
             <button class="popup__close" type="button"></button>
             <h2 class="popup__title popup__title_place">Новое место</h2>
             <input type="text" name="title" class="popup__input popup__input_title" id="title-input" placeholder="Название" value="" required minlength="1" maxlength="30">
@@ -51,12 +53,14 @@
             <span class="popup__input-error" id="link-input-error">Необходимо заполнить данное поле</span>
             <button type="submit" class="popup__button popup__button_add">Создать</button>
           </form>
+        </section> 
+        <section class="popup popup_type_figure">
           <figure class="popup__container popup__container_figure">
             <button class="popup__close" type="button"></button>
             <img class="popup__img" src="#" alt="#">
             <figcaption class="popup__text"></figcaption>
           </figure>
-        </section>  
+        </section> 
         <template id="element-template">
            <div class="element">
              <button type="button" class="element__basket"></button>
@@ -66,8 +70,10 @@
                 <button class="element__like" type="button"></button>
             </div>
           </div> 
-          </template> 
-        <script src="./scripts/script.js"></script>
+        </template> 
+        <script src="./scripts/variables.js"></script>
         <script src="./scripts/validate.js"></script>
+        <script src="./scripts/script.js"></script>
+        
 </body>
 </html>

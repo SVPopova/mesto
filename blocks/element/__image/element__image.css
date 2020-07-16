@@ -4,6 +4,8 @@
     cursor: pointer;
     transition: linear .5s;
     display: block;
+    object-fit: cover;
+    object-position: center;
 }
 .element__image:hover{
     opacity: .6;

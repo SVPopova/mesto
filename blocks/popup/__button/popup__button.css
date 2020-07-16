@@ -20,3 +20,15 @@
 .popup__button:hover{
     background-color:rgba(0, 0, 0, 0.8);
 }
+.popup__button:disabled{
+    color: #000000;
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    pointer-events: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    opacity: 0.2;
+}
