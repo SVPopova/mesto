@@ -24,3 +24,12 @@ const initialCards = [
         link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
     }
 ];
+const obj = [{
+    formSelector: '.popup__container_form',
+    inputSelector: '.popup__input',
+    submitButtonSelector: '.popup__button',
+    inputErrorClass: 'popup__input_error',
+    errorClass: 'popup__input-error_active'
+  }];
+
+  export { initialCards, obj };
