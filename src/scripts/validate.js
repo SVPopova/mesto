@@ -19,7 +19,7 @@ _showError(input) {
 
 _hideError(input) {
   const error = this._form.querySelector(`#${input.id}-error`);
-  this._form.classList.remove(this._inputErrorClass);
+  input.classList.remove(this._inputErrorClass);
   error.classList.remove(this._errorClass);
   error.textContent = '';
 }
