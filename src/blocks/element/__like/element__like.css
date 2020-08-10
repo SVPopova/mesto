@@ -1,16 +1,14 @@
-.element__like{
-    vertical-align: middle;
-    width: 20.76px;
-    height: 18.13px;
-    border: none;
-    background-image: url(../../../images/likeOff.svg);
-    background-color: #FFFFFF;
-    cursor: pointer;
-    outline: none;
-    transition: linear .5s;
+.element__like {
+  vertical-align: middle;
+  width: 20.76px;
+  height: 18.13px;
+  border: none;
+  background-image: url(../../../images/likeOff.svg);
+  background-color: #ffffff;
+  cursor: pointer;
+  outline: none;
+  transition: linear 0.5s;
 }
-.element__like:hover{
-    opacity: .6;
+.element__like:hover {
+  opacity: 0.6;
 }
-
-

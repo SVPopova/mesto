@@ -1,12 +1,10 @@
-.popup__container{
-    display: flex;
-    margin: auto;
-    position: relative;
-    
+.popup__container {
+  display: flex;
+  margin: auto;
+  position: relative;
 }
-@media screen and (max-width: 516px){
-    .popup__container{
-        margin: auto 41px auto 41px;
-    }  
+@media screen and (max-width: 516px) {
+  .popup__container {
+    margin: auto 41px auto 41px;
+  }
 }
-

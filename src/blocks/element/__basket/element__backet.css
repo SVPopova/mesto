@@ -1,22 +1,22 @@
-.element__basket{
-    width: 18px;
-    height: 19.3px;
-    background: none;
-    background-image: url(../../../images/backet.svg);
-    background-size: 100%;
-    background-repeat: no-repeat;
-    background-position: center;
-    position: absolute;
-    top: 4.9%;
-    right: 5%;
-    outline: none;
-    border: none;
-    padding: 0;
-    margin: 0; 
-    transition: linear .5s;
-    cursor: pointer;
-    z-index: 1;
+.element__basket {
+  width: 18px;
+  height: 19.3px;
+  background: none;
+  background-image: url(../../../images/backet.svg);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  top: 4.9%;
+  right: 5%;
+  outline: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  transition: linear 0.5s;
+  cursor: pointer;
+  z-index: 1;
 }
-.element__basket:hover{
-    opacity: .6;
+.element__basket:hover {
+  opacity: 0.6;
 }

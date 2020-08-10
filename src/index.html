@@ -1,73 +1,128 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mesto Russia</title>
-  
-</head>
-<body class="page">
-        <header class="header"> 
-            <a class="header__logo-link" href="#"><img class="header__logo-img" src="./images/logo.svg" alt="Логотип Mesto Russia"></a> 
-        </header>
-        <section class="profile"> 
-          <div class="profile__info">
-            <img class="profile__avatar" src="./images/profile_image.jpg" alt="Фотография профиля">
-            <div class="profile__text">
-              <div class="profile__topline">
-                <h1 class="profile__name">Жак-Ив Кусто</h1>
-                <button class="profile__button profile__button_edit" type="button"></button>
-              </div>
-              
-              <p class="profile__about">Исследователь океана</p>
-            </div>
-            
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mesto Russia</title>
+  </head>
+  <body class="page">
+    <header class="header">
+      <a class="header__logo-link" href="#"
+        ><img class="header__logo-img" src="./images/logo.svg" alt="Логотип Mesto Russia"
+      /></a>
+    </header>
+    <section class="profile">
+      <div class="profile__info">
+        <img class="profile__avatar" src="./images/profile_image.jpg" alt="Фотография профиля" />
+        <div class="profile__text">
+          <div class="profile__topline">
+            <h1 class="profile__name">Жак-Ив Кусто</h1>
+            <button class="profile__button profile__button_edit" type="button"></button>
           </div>
-          <button class="profile__button profile__button_add" type="button"></button>
-        </section>
-        <section class="elements">
-        </section>
-        <footer class="footer">
-          <p class="footer__copyright">&#169; 2020 Mesto Russia</p>
-        </footer>
-        <section class="popup popup_type_profile"> 
-          <form class="popup__container popup__container_form" method="GET" action="#" name="profileEdit" novalidate>
-            <button class="popup__close" type="button"></button>
-            <h2 class="popup__title popup__title_profile">Редактировать профиль</h2>
-            <input type="text" name="name" class="popup__input popup__input_name" id="name-input" value="" required minlength="2" maxlength="40">
-            <span class="popup__input-error" id="name-input-error">Необходимо заполнить данное поле</span>
-            <input type="text" name="about" class="popup__input popup__input_about" id="about-input" value="" required minlength="2" maxlength="200">
-            <span class="popup__input-error" id="about-input-error">Необходимо заполнить данное поле</span>
-            <button type="submit" class="popup__button popup__button_save">Сохранить</button>
-          </form>
-        </section>  
-        <section class="popup popup_type_place"> 
-          <form class="popup__container popup__container_form" method="GET" action="#" name="cardAdd" novalidate>
-            <button class="popup__close" type="button"></button>
-            <h2 class="popup__title popup__title_place">Новое место</h2>
-            <input type="text" name="title" class="popup__input popup__input_title" id="title-input" placeholder="Название" value="" required minlength="1" maxlength="30">
-            <span class="popup__input-error" id="title-input-error">Необходимо заполнить данное поле</span>
-            <input type="url" name="link" class="popup__input popup__input_link" id="link-input" placeholder="Ссылка на картинку" value="" required>
-            <span class="popup__input-error" id="link-input-error">Необходимо заполнить данное поле</span>
-            <button type="submit" class="popup__button popup__button_add">Создать</button>
-          </form>
-        </section> 
-        <section class="popup popup_type_figure">
-          <figure class="popup__container popup__container_figure">
-            <button class="popup__close" type="button"></button>
-            <img class="popup__img" src="#" alt="#">
-            <figcaption class="popup__text"></figcaption>
-          </figure>
-        </section> 
-        <template id="element-template">
-           <div class="element">
-             <button type="button" class="element__basket"></button>
-              <img class="element__image" src="#" alt="#">
-              <div class="element__group">
-                <h2 class="element__title"></h2>
-                <button class="element__like" type="button"></button>
-            </div>
-          </div> 
-        </template> 
-</body>
+
+          <p class="profile__about">Исследователь океана</p>
+        </div>
+      </div>
+      <button class="profile__button profile__button_add" type="button"></button>
+    </section>
+    <section class="elements"></section>
+    <footer class="footer">
+      <p class="footer__copyright">&#169; 2020 Mesto Russia</p>
+    </footer>
+    <section class="popup popup_type_profile">
+      <form
+        class="popup__container popup__container_form"
+        method="GET"
+        action="#"
+        name="profileEdit"
+        novalidate
+      >
+        <button class="popup__close" type="button"></button>
+        <h2 class="popup__title popup__title_profile">Редактировать профиль</h2>
+        <input
+          type="text"
+          name="name"
+          class="popup__input popup__input_name"
+          id="name-input"
+          value=""
+          required
+          minlength="2"
+          maxlength="40"
+        />
+        <span class="popup__input-error" id="name-input-error"
+          >Необходимо заполнить данное поле</span
+        >
+        <input
+          type="text"
+          name="about"
+          class="popup__input popup__input_about"
+          id="about-input"
+          value=""
+          required
+          minlength="2"
+          maxlength="200"
+        />
+        <span class="popup__input-error" id="about-input-error"
+          >Необходимо заполнить данное поле</span
+        >
+        <button type="submit" class="popup__button popup__button_save">Сохранить</button>
+      </form>
+    </section>
+    <section class="popup popup_type_place">
+      <form
+        class="popup__container popup__container_form"
+        method="GET"
+        action="#"
+        name="cardAdd"
+        novalidate
+      >
+        <button class="popup__close" type="button"></button>
+        <h2 class="popup__title popup__title_place">Новое место</h2>
+        <input
+          type="text"
+          name="title"
+          class="popup__input popup__input_title"
+          id="title-input"
+          placeholder="Название"
+          value=""
+          required
+          minlength="1"
+          maxlength="30"
+        />
+        <span class="popup__input-error" id="title-input-error"
+          >Необходимо заполнить данное поле</span
+        >
+        <input
+          type="url"
+          name="link"
+          class="popup__input popup__input_link"
+          id="link-input"
+          placeholder="Ссылка на картинку"
+          value=""
+          required
+        />
+        <span class="popup__input-error" id="link-input-error"
+          >Необходимо заполнить данное поле</span
+        >
+        <button type="submit" class="popup__button popup__button_add">Создать</button>
+      </form>
+    </section>
+    <section class="popup popup_type_figure">
+      <figure class="popup__container popup__container_figure">
+        <button class="popup__close" type="button"></button>
+        <img class="popup__img" src="#" alt="#" />
+        <figcaption class="popup__text"></figcaption>
+      </figure>
+    </section>
+    <template id="element-template">
+      <div class="element">
+        <button type="button" class="element__basket"></button>
+        <img class="element__image" src="#" alt="#" />
+        <div class="element__group">
+          <h2 class="element__title"></h2>
+          <button class="element__like" type="button"></button>
+        </div>
+      </div>
+    </template>
+  </body>
 </html>

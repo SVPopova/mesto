@@ -1,19 +1,19 @@
-.popup__close{
-width: 40.7px;
-height: 40.7px;
-background-image: url(../../../images/close.svg);
-background-position: center;
-background-repeat: no-repeat;
-background-color: rgba(0, 0, 0, 0);
-border: none;
-outline: none;
-cursor: pointer;
-position: absolute;
-padding: 0;
-top: -10%;
-left: 100%;
-transition: linear .5s;
+.popup__close {
+  width: 40.7px;
+  height: 40.7px;
+  background-image: url(../../../images/close.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  outline: none;
+  cursor: pointer;
+  position: absolute;
+  padding: 0;
+  top: -10%;
+  left: 100%;
+  transition: linear 0.5s;
 }
-.popup__close:hover{
-opacity: .6;
+.popup__close:hover {
+  opacity: 0.6;
 }

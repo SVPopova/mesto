@@ -1,18 +1,17 @@
-.profile__button_edit{
-    background-image: url(../../../../images/pen.svg);
-    width: 24px;
-    height: 24px;
-    border: 1px solid #FFFFFF;
-    background-size: 50%;
-    margin-top: 6px;
-    margin-left: 17px;
-
+.profile__button_edit {
+  background-image: url(../../../../images/pen.svg);
+  width: 24px;
+  height: 24px;
+  border: 1px solid #ffffff;
+  background-size: 50%;
+  margin-top: 6px;
+  margin-left: 17px;
 }
-@media screen and (max-width: 425px){
-    .profile__button_edit{
-        width: 18px;
-        height: 18px;
-        margin-top: 0px;
-        margin-left: 7px;
-    }
+@media screen and (max-width: 425px) {
+  .profile__button_edit {
+    width: 18px;
+    height: 18px;
+    margin-top: 0px;
+    margin-left: 7px;
+  }
 }
