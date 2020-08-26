@@ -1,5 +1,5 @@
-import './styles/index.css';
-import './images/favicon.ico';
+import './index.css';
+import '../images/favicon.ico';
 import {
   obj,
   nameProfile,
@@ -13,9 +13,9 @@ import {
   jobInput,
   avatarProfile,
 } from '../scripts/constants.js';
-import { Card } from './scripts/Card.js';
-import { FormValidator } from './scripts/Validate.js';
-import { Section } from './scripts/Section.js';
+import { Card } from '../scripts/Card.js';
+import { FormValidator } from '../scripts/Validate.js';
+import { Section } from '../scripts/Section.js';
 import { PopupWithImage } from '../scripts/PopupWithImage.js';
 import { PopupWithForm } from '../scripts/PopupWithForm.js';
 import { PopupWithDelete } from '../scripts/PopupWithDelete.js';
@@ -135,8 +135,7 @@ const popupWithDelete = new PopupWithDelete({
   popupSelector: '.popup_type_agree',
   formSelector: '.popup__container_form',
   submit: (cardElement, idCard) => {
-    console.log(cardElement);
-    console.log(idCard);
+    popupWithDelete._form.querySelector('.popup__button_agree').textContent = 'Удаление...';
     api
       .deleteCards(idCard)
       .then(() => {
@@ -144,6 +143,10 @@ const popupWithDelete = new PopupWithDelete({
       })
       .catch((err) => {
         console.log(err);
+      })
+      .finally(() => {
+        popupWithDelete._form.querySelector('.popup__button_agree').textContent = 'Создать';
+        popupWithDelete.close();
       });
   },
 });
