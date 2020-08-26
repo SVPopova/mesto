@@ -12,15 +12,15 @@ import {
   nameInput,
   jobInput,
   avatarProfile,
-} from './scripts/constants.js';
+} from '../scripts/constants.js';
 import { Card } from './scripts/Card.js';
 import { FormValidator } from './scripts/Validate.js';
 import { Section } from './scripts/Section.js';
-import { PopupWithImage } from './scripts/PopupWithImage.js';
-import { PopupWithForm } from './scripts/PopupWithForm.js';
-import { PopupWithDelete } from './scripts/PopupWithDelete.js';
-import { UserInfo } from './scripts/UserInfo.js';
-import { Api } from './scripts/Api.js';
+import { PopupWithImage } from '../scripts/PopupWithImage.js';
+import { PopupWithForm } from '../scripts/PopupWithForm.js';
+import { PopupWithDelete } from '../scripts/PopupWithDelete.js';
+import { UserInfo } from '../scripts/UserInfo.js';
+import { Api } from '../scripts/Api.js';
 
 const api = new Api({
   baseUrl: 'https://mesto.nomoreparties.co/v1/cohort-14',
