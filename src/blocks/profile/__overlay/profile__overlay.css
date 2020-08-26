@@ -1,0 +1,8 @@
+.profile__overlay {
+  background-image: url(../../../images/pen.svg);
+  background-repeat: no-repeat;
+  background-size: 30%;
+  margin-right: 30px;
+  background-position: center;
+  cursor: pointer;
+}

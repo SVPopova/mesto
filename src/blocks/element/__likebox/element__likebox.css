@@ -1,0 +1,7 @@
+.element__likebox {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-items: center;
+  align-content: center;
+}

@@ -13,7 +13,10 @@
     </header>
     <section class="profile">
       <div class="profile__info">
-        <img class="profile__avatar" src="./images/profile_image.jpg" alt="Фотография профиля" />
+        <div class="profile__overlay">
+          <img class="profile__avatar" src="./images/profile_image.jpg" alt="Фотография профиля" />
+        </div>
+
         <div class="profile__text">
           <div class="profile__topline">
             <h1 class="profile__name">Жак-Ив Кусто</h1>
@@ -80,7 +83,7 @@
         <h2 class="popup__title popup__title_place">Новое место</h2>
         <input
           type="text"
-          name="title"
+          name="name"
           class="popup__input popup__input_title"
           id="title-input"
           placeholder="Название"
@@ -114,13 +117,54 @@
         <figcaption class="popup__text"></figcaption>
       </figure>
     </section>
+    <section class="popup popup_type_agree">
+      <form
+        class="popup__container popup__container_form"
+        method="GET"
+        action="#"
+        name="cardAdd"
+        novalidate
+      >
+        <button class="popup__close" type="button"></button>
+        <h2 class="popup__title popup__title_place">Вы уверены?</h2>
+        <button type="submit" class="popup__button popup__button_agree">Да</button>
+      </form>
+    </section>
+    <section class="popup popup_type_avatar">
+      <form
+        class="popup__container popup__container_form"
+        method="GET"
+        action="#"
+        name="cardAdd"
+        novalidate
+      >
+        <button class="popup__close" type="button"></button>
+        <h2 class="popup__title popup__title_place">Обновить аватар</h2>
+        <input
+          type="url"
+          name="link"
+          class="popup__input popup__input_link"
+          id="link-input"
+          placeholder="Ссылка на картинку"
+          value=""
+          required
+        />
+        <span class="popup__input-error" id="link-input-error"
+          >Необходимо заполнить данное поле</span
+        >
+        <button type="submit" class="popup__button popup__button_change">Сохранить</button>
+      </form>
+    </section>
     <template id="element-template">
       <div class="element">
         <button type="button" class="element__basket"></button>
         <img class="element__image" src="#" alt="#" />
         <div class="element__group">
           <h2 class="element__title"></h2>
-          <button class="element__like" type="button"></button>
+          <div class="element__likebox">
+            <button class="element__like" type="button"></button>
+            <p class="element__like-number">0</p>
+          </div>
         </div>
       </div>
     </template>

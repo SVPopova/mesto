@@ -4,6 +4,9 @@
 @import url(./__like/_active/element__like_active.css);
 @import url(./__group/element__group.css);
 @import url(./__basket/element__backet.css);
+@import url(./__basket/_active/element__basket_active.css);
+@import url(./__likebox/element__likebox.css);
+@import url(./__like-number/element__like-number.css);
 .element {
   width: 282px;
   background-color: #ffffff;
