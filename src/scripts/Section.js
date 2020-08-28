@@ -3,10 +3,11 @@ class Section {
     this._renderer = renderer;
     this._container = document.querySelector(cardSelector);
   }
-  renderItems({ data }) {
+  renderItems(data) {
     this._renderedItems = data;
-    this._renderedItems.forEach((item) => this._renderer(item));
+    this._renderedItems.reverse().forEach((item) => this._renderer(item));
   }
+
   addItem(element) {
     this._container.prepend(element);
   }

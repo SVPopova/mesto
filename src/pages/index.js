@@ -29,21 +29,11 @@ const api = new Api({
     'Content-Type': 'application/json',
   },
 });
-
-//Загрузка данных профиля с сервера
-api.getMe().then((data) => {
-  console.log(data);
-  nameProfile.textContent = data.name;
-  aboutProfile.textContent = data.about;
-  avatarProfile.src = data.avatar;
-});
-//Загрузка карточек с сервера
-api.getInitialCards().then((items) => {
-  // отрисовка карточек
-  cardList.renderItems({ data: items });
-});
-
 const userInfo = new UserInfo({ nameProfile, aboutProfile, avatarProfile });
+//Загрузка данных профиля с сервера
+console.log(userInfo);
+console.log(userInfo._id);
+
 const getCard = (item) => {
   const card = new Card({
     data: item,
@@ -55,24 +45,28 @@ const getCard = (item) => {
     handleCardDelete: () => {
       popupWithDelete.open(cardElement, item._id);
     },
-    handleCardLike: () => {
-      api.likeCards(item._id).then((data) => {
-        cardElement.querySelector('.element__like-number').textContent = data.likes.length;
-        cardElement.querySelector('.element__like').classList.add('element__like_active');
-      });
-      api.unLikeCards(item._id).then((data) => {
-        cardElement.querySelector('.element__like-number').textContent = data.likes.length;
-        cardElement.querySelector('.element__like').classList.remove('element__like_active');
-      });
+    handleCardLike: (item) => {
+      console.log(item.likes);
+      if (cardElement.querySelector('.element__like').classList.contains(`element__like_active`)) {
+        api.unLikeCards(item._id).then((data) => {
+          cardElement.querySelector('.element__like-number').textContent = data.likes.length;
+          cardElement.querySelector('.element__like').classList.remove('element__like_active');
+        });
+      } else {
+        api.likeCards(item._id).then((data) => {
+          cardElement.querySelector('.element__like-number').textContent = data.likes.length;
+          cardElement.querySelector('.element__like').classList.add('element__like_active');
+        });
+      }
     },
   });
   const cardElement = card.generateCard();
   cardElement.querySelector('.element__like-number').textContent = item.likes.length;
-  if (item.owner._id === '94da9d3c47cc9dd095dcb03c') {
+  if (item.owner._id === userInfo._id) {
     cardElement.querySelector('.element__basket').classList.add('element__basket_active');
   }
   item.likes.forEach((like) => {
-    if (like._id === '94da9d3c47cc9dd095dcb03c') {
+    if (like._id === userInfo._id) {
       cardElement.querySelector('.element__like').classList.add('element__like_active');
     }
   });
@@ -115,9 +109,6 @@ const popupFormCard = new PopupWithForm(
         .createCards(formData)
         .then((data) => {
           const cardElement = getCard(data);
-          if (data.owner._id === '94da9d3c47cc9dd095dcb03c') {
-            cardElement.querySelector('.element__basket').classList.add('element__basket_active');
-          }
           cardList.addItem(cardElement);
         })
         .catch((error) => {
@@ -157,10 +148,8 @@ const popupWithAvatar = new PopupWithForm(
       popupWithAvatar._form.querySelector('.popup__button_change').textContent = 'Сохранение...';
       api
         .changeAvatar(formData.link)
-
         .then((data) => {
-          console.log(data);
-          userInfo.setUserAvatar({ link: data.avatar });
+          userInfo.setUserInfo({ link: data.avatar });
         })
         .finally(() => {
           popupWithAvatar._form.querySelector('.popup__button_change').textContent = 'Сохранить';
@@ -192,7 +181,6 @@ document.querySelector('.profile__avatar').addEventListener('click', () => {
   popupButtonChange.setAttribute('disabled', true);
   popupWithAvatar.open();
 });
-
 popupImage.setEventListeners();
 popupFormProfile.setEventListeners();
 popupFormCard.setEventListeners();
@@ -206,4 +194,13 @@ buttonEdit.addEventListener('click', () => {
 buttonAdd.addEventListener('click', () => {
   popupButtonAdd.setAttribute('disabled', true); //для того чтоб при открытии кнопка была неактивна и активизировалась после введения валидной информации
   popupFormCard.open();
+});
+
+//Промисы. Загрузка с сервера
+Promise.all([api.getMe(), api.getInitialCards()]).then(([data, items]) => {
+  //Загрузка с сервера данных пользователя
+  userInfo.setUserInfo(data);
+  //Загрузка карточек с сервера
+  // отрисовка карточек
+  cardList.renderItems(items);
 });

@@ -77,7 +77,7 @@ api.getInitialCards().then((items) => {
           }
         });
 
-        cardList.addItem(cardElement);
+        cardList.addItemPrepend(cardElement);
       },
     },
     '.elements',
